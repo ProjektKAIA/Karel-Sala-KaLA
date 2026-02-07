@@ -54,10 +54,21 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center pt-4 border-t border-border">
+        <div className="text-center pt-4 border-t border-border space-y-2">
           <p className="text-text-muted text-sm">
             &copy; {new Date().getFullYear()} KaLa Automobile – Karel Sala. Alle
             Rechte vorbehalten. | Begonienstraße 1, 90542 Eckental | Autoankauf Nürnberg & Umgebung
+          </p>
+          <p className="text-text-muted/60 text-xs">
+            Made by{" "}
+            <a
+              href="https://kaiashapes.de"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-muted/80 no-underline hover:text-accent transition-colors"
+            >
+              KaiaShapes
+            </a>
           </p>
         </div>
       </div>
