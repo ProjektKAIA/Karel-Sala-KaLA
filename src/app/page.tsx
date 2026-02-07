@@ -7,6 +7,7 @@ import AnkaufForm from "@/components/AnkaufForm";
 import Abmeldung from "@/components/Abmeldung";
 import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
+import SeoContent from "@/components/SeoContent";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -24,6 +25,7 @@ export default function Home() {
         <Abmeldung />
         <Reviews />
         <FAQ />
+        <SeoContent />
         <Contact />
       </main>
       <Footer />

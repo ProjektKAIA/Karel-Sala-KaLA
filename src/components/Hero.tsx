@@ -10,14 +10,14 @@ export default function Hero() {
             Faire Preise – Schnelle Abwicklung
           </div>
           <h1 className="font-serif text-[clamp(2.5rem,5vw,3.8rem)] leading-[1.15] mb-5">
-            Ihr Auto verkaufen?{" "}
-            <span className="text-accent">Einfach & fair.</span>
+            Autoankauf Nürnberg & Eckental –{" "}
+            <span className="text-accent">Einfach, fair & sofort.</span>
           </h1>
           <p className="text-lg text-text-secondary mb-9 max-w-[520px] leading-relaxed">
-            KaLa Automobile kauft Fahrzeuge aller Art in der Region
-            Nürnberg/Eckental. Kostenlose Besichtigung, Barzahlung vor Ort und
-            keine versteckten Kosten. Wir übernehmen auch die Abmeldung Ihres
-            Fahrzeugs.
+            KaLa Automobile kauft Fahrzeuge aller Art in Nürnberg, Eckental,
+            Erlangen, Fürth und ganz Mittelfranken. Kostenlose Besichtigung,
+            sofortige Barzahlung vor Ort, kostenlose Abholung und Abmeldung –
+            auch Unfallwagen und Fahrzeuge ohne TÜV.
           </p>
           <div className="flex gap-3.5 flex-wrap">
             <a
@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="relative rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)]">
           <Image
             src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80"
-            alt="Auto Ankauf – KaLa Automobile Nürnberg Eckental"
+            alt="Autoankauf Nürnberg Eckental Erlangen Fürth – KaLa Automobile kauft Ihr Fahrzeug sofort"
             width={800}
             height={480}
             className="w-full h-[320px] lg:h-[480px] object-cover block"

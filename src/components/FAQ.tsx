@@ -4,36 +4,44 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Ist die Besichtigung wirklich kostenlos?",
-    a: "Ja, absolut. Die Besichtigung, Abholung und alle Dokumente sind komplett kostenfrei. Es entstehen keine Folgekosten.",
+    q: "Ist die Besichtigung beim Autoankauf wirklich kostenlos?",
+    a: "Ja, absolut. Die Besichtigung, Abholung und alle Dokumente sind komplett kostenfrei. Es entstehen keine Folgekosten. KaLa Automobile bietet in Nürnberg, Eckental und Umgebung eine 100% kostenlose Fahrzeugbewertung an.",
   },
   {
-    q: "Kaufen Sie auch Unfallfahrzeuge?",
-    a: "Ja, wir kaufen Autos aller Art – auch Unfallfahrzeuge oder nicht fahrbare Fahrzeuge. Abholung inklusive.",
+    q: "Kaufen Sie auch Unfallfahrzeuge und Autos ohne TÜV in Nürnberg an?",
+    a: "Ja, wir kaufen Autos aller Art – auch Unfallfahrzeuge, Fahrzeuge ohne TÜV, mit Motorschaden oder Getriebeschaden. Die Abholung ist in Nürnberg, Erlangen, Fürth, Eckental und ganz Mittelfranken inklusive.",
   },
   {
-    q: "Wie schnell erhalte ich ein Angebot?",
-    a: "In der Regel innerhalb von 24 Stunden nach Eingang Ihrer Anfrage.",
+    q: "Wie schnell erhalte ich ein Angebot für mein Auto?",
+    a: "In der Regel innerhalb von 24 Stunden nach Eingang Ihrer Anfrage. Kontaktieren Sie uns per Telefon, WhatsApp oder Formular für eine schnelle Fahrzeugbewertung.",
   },
   {
-    q: "Wie läuft die Bezahlung ab?",
-    a: "Sie erhalten Ihr Geld sofort in Bar bei Übergabe. Dazu gibt es einen gesetzlichen Kaufvertrag.",
+    q: "Wie läuft die Barzahlung beim Autoankauf ab?",
+    a: "Sie erhalten Ihr Geld sofort in Bar bei Übergabe des Fahrzeugs. Dazu erhalten Sie einen gesetzlichen Kaufvertrag. Die Bezahlung erfolgt direkt vor Ort – in Nürnberg, Eckental oder wo immer Sie sich befinden.",
   },
   {
-    q: "Gibt es Gewährleistungspflichten für mich?",
-    a: "Nein. Sie verkaufen ohne Garantie- und Gewährleistungspflicht. Das Risiko liegt bei uns.",
+    q: "Gibt es Gewährleistungspflichten für mich als Verkäufer?",
+    a: "Nein. Sie verkaufen ohne Garantie- und Gewährleistungspflicht. Das gesamte Risiko liegt bei KaLa Automobile.",
   },
   {
-    q: "Werden meine Daten weitergegeben?",
-    a: "Nein. Wir arbeiten ohne Zwischenhändler und geben keine Daten an Dritte weiter.",
+    q: "Werden meine Daten an Dritte weitergegeben?",
+    a: "Nein. Wir arbeiten ohne Zwischenhändler und geben keine Daten an Dritte weiter. Ihre Daten bleiben ausschließlich bei KaLa Automobile.",
   },
   {
     q: "Übernehmen Sie die Abmeldung meines Fahrzeugs?",
-    a: "Ja, wir kümmern uns um die komplette Abmeldung bei der Zulassungsstelle – kostenfrei und ohne Aufwand für Sie. Sie erhalten einen Nachweis der Abmeldung.",
+    a: "Ja, wir kümmern uns um die komplette Abmeldung bei der Zulassungsstelle – kostenfrei und ohne Aufwand für Sie. Sie erhalten einen Nachweis der Abmeldung per E-Mail oder Post.",
   },
   {
-    q: "Kann ich Sie auch per WhatsApp erreichen?",
-    a: "Ja! Sie können uns jederzeit per WhatsApp unter 0178 4096050 kontaktieren. Fotos vom Fahrzeug können Sie uns direkt zusenden.",
+    q: "Kann ich KaLa Automobile auch per WhatsApp erreichen?",
+    a: "Ja! Sie können uns jederzeit per WhatsApp unter 0178 4096050 kontaktieren. Fotos vom Fahrzeug können Sie uns direkt zusenden für eine schnelle Bewertung.",
+  },
+  {
+    q: "In welchen Städten bietet KaLa Automobile Autoankauf an?",
+    a: "KaLa Automobile kauft Fahrzeuge in Nürnberg, Eckental, Erlangen, Fürth, Schwabach, Herzogenaurach, Heroldsberg, Lauf an der Pegnitz, Forchheim, Bamberg und der gesamten Metropolregion Nürnberg an. Kostenlose Abholung in ganz Mittelfranken.",
+  },
+  {
+    q: "Welche Fahrzeuge kauft KaLa Automobile an?",
+    a: "Wir kaufen alle Fahrzeuge: Gebrauchtwagen, Unfallfahrzeuge, Autos ohne TÜV, mit Motorschaden, Getriebeschaden, hohem Kilometerstand, Diesel, Benziner, Elektro, Hybrid, Transporter und Firmenwagen. Alle Marken und Modelle.",
   },
 ];
 
@@ -48,10 +56,10 @@ export default function FAQ() {
           FAQ
         </div>
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
-          Häufig gestellte Fragen
+          Häufig gestellte Fragen zum Autoankauf
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
-          Antworten auf die wichtigsten Fragen rund um den Autoankauf.
+          Antworten auf die wichtigsten Fragen rund um den Autoankauf in Nürnberg, Eckental und Umgebung.
         </p>
       </div>
 
