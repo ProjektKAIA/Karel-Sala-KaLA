@@ -18,8 +18,10 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-        <Benefits />
-        <Process />
+        <div className="flex flex-col">
+          <div className="order-2 lg:order-1"><Benefits /></div>
+          <div className="order-1 lg:order-2"><Process /></div>
+        </div>
         <AnkaufForm />
         <Abmeldung />
         <FAQ />

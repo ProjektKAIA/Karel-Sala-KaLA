@@ -1,20 +1,20 @@
 export default function Footer() {
   return (
-    <footer className="bg-bg-white border-t border-border pt-12 pb-8 px-6">
+    <footer className="bg-bg-white border-t border-border pt-10 sm:pt-12 pb-8 px-6">
       <div className="max-w-[1200px] mx-auto">
         {/* Top: Brand + Links */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-8">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-6 sm:gap-8 mb-8">
           <div>
-            <a href="#" className="font-serif text-xl text-text-primary no-underline">
+            <a href="/" className="font-serif text-xl text-text-primary no-underline">
               Ka<span className="text-accent">La</span> Automobile
             </a>
-            <p className="text-text-muted text-sm mt-2 max-w-sm">
+            <p className="text-text-muted text-xs sm:text-sm mt-2 max-w-sm">
               Ihr seriöser Partner für Autoankauf in Nürnberg, Eckental, Erlangen, Fürth und ganz Mittelfranken.
               Faire Höchstpreise, sofortige Barzahlung, kostenlose Abholung und Abmeldung.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 w-full md:w-auto">
             <div>
               <h4 className="text-sm font-semibold mb-3 text-text-primary">Service</h4>
               <ul className="space-y-2 list-none">
@@ -55,7 +55,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center pt-4 border-t border-border space-y-2">
-          <p className="text-text-muted text-sm">
+          <p className="text-text-muted text-xs sm:text-sm">
             &copy; {new Date().getFullYear()} Ka<span className="text-accent">La</span> Automobile – Karel Sala. Alle
             Rechte vorbehalten. | Begonienstraße 1, 90542 Eckental | Autoankauf Nürnberg & Umgebung
           </p>

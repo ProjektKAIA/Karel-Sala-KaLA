@@ -77,7 +77,7 @@ export default function Benefits() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="py-16 lg:py-24 px-6" id="vorteile">
+    <section className="py-10 lg:py-24 px-6" id="vorteile">
       <div className="text-center max-w-[600px] mx-auto mb-14">
         <div className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[2px] mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -198,36 +198,59 @@ export default function Benefits() {
         </div>
       </div>
 
-      {/* ── Mobile / Tablet: Grid ── */}
-      <div className="lg:hidden max-w-[700px] mx-auto">
-        <div className="flex justify-center mb-8">
-          <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_12px_40px_rgba(227,30,45,0.25)]">
-            <Car className="w-10 h-10 text-white" strokeWidth={1.5} />
+      {/* ── Mobile / Tablet: Vertical Roadmap ── */}
+      <div className="lg:hidden max-w-[500px] mx-auto">
+        <div className="relative">
+          {/* Vertical dashed road line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px border-l-2 border-dashed border-accent/20 -translate-x-1/2" />
+
+          {/* Car at the top of the road */}
+          <div className="relative flex justify-center mb-6 z-10">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_8px_30px_rgba(227,30,45,0.25)]">
+              <Car className="w-7 h-7 text-white" strokeWidth={1.5} />
+            </div>
           </div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {benefits.map((b) => (
-            <MobileCard key={b.title} {...b} />
-          ))}
+
+          {/* Benefit stations alternating left/right */}
+          <div className="flex flex-col gap-4">
+            {benefits.map((b, i) => (
+              <RoadmapItem key={b.title} {...b} index={i} />
+            ))}
+          </div>
+
+          {/* Road end marker */}
+          <div className="relative flex justify-center mt-6 z-10">
+            <div className="w-3 h-3 rounded-full bg-accent/30" />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-/* ── Mobile card ── */
-function MobileCard({ title, text, icon: Icon }: BenefitItem) {
+/* ── Mobile roadmap item ── */
+function RoadmapItem({ title, text, icon: Icon, index }: BenefitItem & { index: number }) {
+  const isLeft = index % 2 === 0;
+
   return (
-    <div className="bg-bg-white border border-border rounded-2xl p-5 transition-all hover:border-accent hover:shadow-[0_8px_30px_rgba(227,30,45,0.08)] group">
-      <div className="flex items-start gap-3">
-        <div className="shrink-0 w-10 h-10 rounded-full bg-accent-bg flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors">
-          <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
-        </div>
-        <div>
-          <h3 className="text-[0.9rem] font-semibold mb-1">{title}</h3>
-          <p className="text-text-secondary text-sm leading-relaxed">{text}</p>
+    <div className={`relative flex items-center gap-0 ${isLeft ? "flex-row" : "flex-row-reverse"}`}>
+      {/* Card */}
+      <div className={`w-[calc(50%-24px)] ${isLeft ? "text-right" : "text-left"}`}>
+        <div className="bg-bg-white border border-border rounded-xl p-3 shadow-sm">
+          <h3 className="text-[0.82rem] font-semibold mb-0.5">{title}</h3>
+          <p className="text-text-secondary text-[0.72rem] leading-snug">{text}</p>
         </div>
       </div>
+
+      {/* Center icon on the road */}
+      <div className="relative z-10 shrink-0 w-12 flex justify-center">
+        <div className="w-10 h-10 rounded-full bg-bg-white border-2 border-accent flex items-center justify-center text-accent shadow-sm">
+          <Icon className="w-4 h-4" strokeWidth={2} />
+        </div>
+      </div>
+
+      {/* Spacer for opposite side */}
+      <div className="w-[calc(50%-24px)]" />
     </div>
   );
 }

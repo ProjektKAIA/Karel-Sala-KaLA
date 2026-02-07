@@ -38,7 +38,7 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 py-3.5 flex items-center justify-between">
-          <a href="#" className="font-serif text-2xl text-text-primary no-underline">
+          <a href="/" className="font-serif text-2xl text-text-primary no-underline">
             Ka<span className="text-accent">La</span> Automobile
           </a>
 

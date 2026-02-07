@@ -51,31 +51,31 @@ export default function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section className="py-16 lg:py-24 px-6" id="faq">
-      <div className="text-center max-w-[600px] mx-auto mb-14">
+    <section className="py-10 lg:py-24 px-4 sm:px-6" id="faq">
+      <div className="text-center max-w-[600px] mx-auto mb-8 lg:mb-14">
         <div className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[2px] mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           FAQ
         </div>
-        <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
+        <h2 className="font-serif text-[clamp(1.5rem,3vw,2.5rem)] mb-3.5">
           Häufig gestellte Fragen zum Autoankauf
         </h2>
-        <p className="text-text-secondary text-[1.05rem]">
+        <p className="text-text-secondary text-[0.9rem] sm:text-[1.05rem]">
           Antworten auf die wichtigsten Fragen rund um den Autoankauf in Nürnberg, Eckental und Umgebung.
         </p>
       </div>
 
-      <div className="max-w-[800px] mx-auto space-y-2.5">
+      <div className="max-w-[800px] mx-auto space-y-2">
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="border border-border rounded-2xl bg-bg-white overflow-hidden"
+            className="border border-border rounded-xl sm:rounded-2xl bg-bg-white overflow-hidden"
           >
             <button
               onClick={() => setOpen(open === i ? -1 : i)}
-              className="w-full px-6 py-5 bg-transparent border-none text-text-primary font-sans text-base font-medium text-left cursor-pointer flex justify-between items-center transition-colors hover:text-accent"
+              className="w-full px-4 py-3.5 sm:px-6 sm:py-5 bg-transparent border-none text-text-primary font-sans text-[0.85rem] sm:text-base font-medium text-left cursor-pointer flex justify-between items-start gap-3 transition-colors hover:text-accent"
             >
-              {faq.q}
+              <span className="leading-snug">{faq.q}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -86,7 +86,7 @@ export default function FAQ() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className={`text-accent shrink-0 ml-4 transition-transform ${
+                className={`text-accent shrink-0 mt-0.5 transition-transform ${
                   open === i ? "rotate-180" : ""
                 }`}
               >
@@ -94,7 +94,7 @@ export default function FAQ() {
               </svg>
             </button>
             <div className={`faq-answer ${open === i ? "open" : ""}`}>
-              <div className="px-6 pb-5 text-text-secondary text-[0.95rem] leading-relaxed">
+              <div className="px-4 pb-3.5 sm:px-6 sm:pb-5 text-text-secondary text-[0.8rem] sm:text-[0.95rem] leading-relaxed">
                 {faq.a}
               </div>
             </div>

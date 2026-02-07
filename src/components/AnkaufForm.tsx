@@ -28,7 +28,7 @@ export default function AnkaufForm() {
 
   if (submitted) {
     return (
-      <section className="py-16 lg:py-24 px-6" id="formular">
+      <section className="py-10 lg:py-24 px-6" id="formular">
         <div className="max-w-[800px] mx-auto bg-bg-white border border-border rounded-3xl p-12 shadow-[0_4px_20px_rgba(0,0,0,0.06)] text-center">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -62,7 +62,7 @@ export default function AnkaufForm() {
   }
 
   return (
-    <section className="py-16 lg:py-24 px-6" id="formular">
+    <section className="py-10 lg:py-24 px-6" id="formular">
       <div className="text-center max-w-[600px] mx-auto mb-14">
         <div className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[2px] mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9m-6-6h15m-6 0V6"/></svg>

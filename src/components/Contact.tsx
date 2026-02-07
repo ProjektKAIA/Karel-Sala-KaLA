@@ -66,27 +66,28 @@ export default function Contact() {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {contactCards.map((c) => (
           <div
             key={c.title}
-            className="bg-bg-white border border-border rounded-2xl p-8 text-center transition-all hover:border-accent hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-1"
+            className="bg-bg-white border border-border rounded-2xl p-4 sm:p-6 lg:p-8 text-center transition-all hover:border-accent hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:-translate-y-1"
           >
-            <div className="w-13 h-13 bg-accent-bg rounded-full flex items-center justify-center mx-auto mb-4 text-accent">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 bg-accent-bg rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-accent">
               {c.icon}
             </div>
-            <h3 className="text-base font-semibold mb-2">{c.title}</h3>
-            <p className="text-text-secondary text-[0.95rem]">{c.content}</p>
+            <h3 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2">{c.title}</h3>
+            <p className="text-text-secondary text-xs sm:text-[0.95rem] break-all sm:break-normal">{c.content}</p>
           </div>
         ))}
       </div>
 
       {/* Google Maps Embed */}
-      <div className="max-w-[1200px] mx-auto mt-10 rounded-2xl overflow-hidden border border-border">
+      <div className="max-w-[1200px] mx-auto mt-8 sm:mt-10 rounded-2xl overflow-hidden border border-border">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.5!2d11.238!3d49.567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDM0JzAyLjAiTiAxMcKwMTQnMTcuMCJF!5e0!3m2!1sde!2sde!4v1"
           width="100%"
-          height="350"
+          height="250"
+          className="sm:h-[350px]"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
