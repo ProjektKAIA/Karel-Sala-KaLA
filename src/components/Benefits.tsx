@@ -1,47 +1,81 @@
-const benefits = [
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>,
-    title: "Keine Datenweitergabe",
-    text: "Ihre Daten bleiben bei uns. Wir arbeiten ohne Zwischenhändler oder Vermittler.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
-    title: "Sofortige Bearbeitung",
-    text: "Zeit ist kostbar – deshalb bearbeiten wir Ihr Angebot sofort nach Eingang.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>,
-    title: "Kaufvertrag inklusive",
-    text: "Ein gesetzlicher Kaufvertrag ist selbstverständlich und Grundbestandteil unserer Arbeit.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>,
-    title: "Kostenlose Besichtigung",
-    text: "Zeitnahe Besichtigungstermine – selbstverständlich immer kostenfrei.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>,
-    title: "Abholung inklusive",
-    text: "Wir holen Ihr Fahrzeug ab, auch wenn es nicht mehr fahrbereit ist.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>,
-    title: "Sofortige Barzahlung",
-    text: "Ihr Geld erhalten Sie sofort und in Bar – inklusive Kaufvertrag.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-    title: "Keine Risiken",
-    text: "Verkauf ohne Garantie- und Gewährleistungspflicht für Sie.",
-  },
-  {
-    icon: <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>,
-    title: "Keine Folgekosten",
-    text: "Besichtigung, Abholung und alle Dokumente – absolut kostenfrei.",
-  },
+"use client";
+
+import { useState } from "react";
+import {
+  Car,
+  HandCoins,
+  Rocket,
+  FileSignature,
+  ScanSearch,
+  CarFront,
+  LockKeyhole,
+  BadgeCheck,
+  Sparkles,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+type BenefitItem = {
+  title: string;
+  text: string;
+  icon: LucideIcon;
+};
+
+const benefits: BenefitItem[] = [
+  { title: "Sofortige Barzahlung", text: "Ihr Geld sofort in Bar bei Übergabe – inklusive Kaufvertrag.", icon: HandCoins },
+  { title: "Sofortige Bearbeitung", text: "Ihr Angebot wird sofort nach Eingang bearbeitet.", icon: Rocket },
+  { title: "Kaufvertrag inklusive", text: "Gesetzlicher Kaufvertrag ist Grundbestandteil unserer Arbeit.", icon: FileSignature },
+  { title: "Kostenlose Besichtigung", text: "Zeitnahe Termine – selbstverständlich immer kostenfrei.", icon: ScanSearch },
+  { title: "Abholung inklusive", text: "Wir holen Ihr Fahrzeug ab – auch wenn es nicht fahrbereit ist.", icon: CarFront },
+  { title: "Keine Datenweitergabe", text: "Ihre Daten bleiben bei uns. Ohne Zwischenhändler.", icon: LockKeyhole },
+  { title: "Keine Risiken", text: "Verkauf ohne Garantie- und Gewährleistungspflicht.", icon: BadgeCheck },
+  { title: "Keine Folgekosten", text: "Besichtigung, Abholung und Dokumente – kostenfrei.", icon: Sparkles },
 ];
 
+/* Pre-calculate circular positions (8 items, 45° apart, starting from top) */
+const RADIUS = 38;
+const LINE_START = 14;
+const LINE_END = 30;
+
+/* Vertical offset so the figure walks ON the line (feet on the line, not body through it) */
+const figureOffset: { x: number; y: number }[] = [
+  { x: 0, y: 0 },      // 0: vertical   – centered is fine
+  { x: -1, y: -1 },     // 1: diagonal
+  { x: 0, y: -2.2 },    // 2: horizontal – shift up so feet are on the line
+  { x: -1, y: 1 },      // 3: diagonal
+  { x: 0, y: 0 },       // 4: vertical   – centered is fine
+  { x: 1, y: 1 },       // 5: diagonal
+  { x: 0, y: -2.2 },    // 6: horizontal – shift up so feet are on the line
+  { x: 1, y: -1 },      // 7: diagonal
+];
+
+/* Tooltip always on the outside of the circle */
+const tooltipClass: string[] = [
+  "bottom-full mb-2 left-1/2 -translate-x-1/2",   // 0: top       → above
+  "bottom-full mb-2 left-0",                        // 1: top-right → above-right
+  "left-full ml-3 top-1/2 -translate-y-1/2",        // 2: right     → right
+  "top-full mt-2 left-0",                            // 3: bot-right → below-right
+  "top-full mt-2 left-1/2 -translate-x-1/2",        // 4: bottom    → below
+  "top-full mt-2 right-0",                           // 5: bot-left  → below-left
+  "right-full mr-3 top-1/2 -translate-y-1/2",       // 6: left      → left
+  "bottom-full mb-2 right-0",                        // 7: top-left  → above-left
+];
+
+const positions = benefits.map((_, i) => {
+  const deg = i * 45 - 90;
+  const rad = deg * (Math.PI / 180);
+  return {
+    left: `${50 + RADIUS * Math.cos(rad)}%`,
+    top: `${50 + RADIUS * Math.sin(rad)}%`,
+    x1: 50 + LINE_START * Math.cos(rad),
+    y1: 50 + LINE_START * Math.sin(rad),
+    x2: 50 + LINE_END * Math.cos(rad),
+    y2: 50 + LINE_END * Math.sin(rad),
+  };
+});
+
 export default function Benefits() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section className="py-16 lg:py-24 px-6" id="vorteile">
       <div className="text-center max-w-[600px] mx-auto mb-14">
@@ -50,27 +84,150 @@ export default function Benefits() {
           Vorteile
         </div>
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
-          Warum KaLa Automobile für Ihren Autoankauf?
+          Ka<span className="text-accent">La</span> Automobile
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
           Transparenter und sicherer Autoankauf in Nürnberg, Eckental, Erlangen und Fürth – ohne Risiken für Sie.
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {benefits.map((b) => (
-          <div
-            key={b.title}
-            className="bg-bg-white border border-border rounded-2xl p-7 transition-all hover:border-accent hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1"
+      {/* ── Desktop: Circular layout ── */}
+      <div className="hidden lg:block max-w-[750px] mx-auto">
+        <div className="relative aspect-square">
+
+          {/* SVG overlay: connector lines + walking figure */}
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="0 0 100 100"
+            aria-hidden="true"
           >
-            <div className="w-11 h-11 bg-accent-bg rounded-xl flex items-center justify-center text-accent mb-4">
-              {b.icon}
-            </div>
-            <h3 className="text-base font-semibold mb-2">{b.title}</h3>
-            <p className="text-text-secondary text-sm leading-relaxed">{b.text}</p>
+            {/* Connector lines */}
+            {positions.map((p, i) => (
+              <line
+                key={i}
+                x1={p.x1}
+                y1={p.y1}
+                x2={p.x2}
+                y2={p.y2}
+                stroke="currentColor"
+                className={hovered === i ? "text-accent/30" : "text-accent/15"}
+                strokeWidth={hovered === i ? "0.4" : "0.3"}
+                strokeDasharray="1.2 1.2"
+                style={{ transition: "all 0.3s" }}
+              />
+            ))}
+
+            {/* Walking stick figure */}
+            {hovered !== null && (
+              <g key={hovered} className="walk-figure">
+                <g transform={`translate(${figureOffset[hovered].x}, ${figureOffset[hovered].y})`}>
+                  <animateMotion
+                    dur="2.8s"
+                    repeatCount="indefinite"
+                    keyPoints="0;1;0"
+                    keyTimes="0;0.5;1"
+                    calcMode="linear"
+                    path={`M${positions[hovered].x1},${positions[hovered].y1} L${positions[hovered].x2},${positions[hovered].y2}`}
+                  />
+                  {/* Head */}
+                  <circle cx="0" cy="-1.2" r="0.6" fill="currentColor" />
+                  {/* Body */}
+                  <line x1="0" y1="-0.6" x2="0" y2="1" stroke="currentColor" strokeWidth="0.35" strokeLinecap="round" />
+                  {/* Left leg */}
+                  <line x1="0" y1="1" x2="-0.5" y2="2.2" stroke="currentColor" strokeWidth="0.3" strokeLinecap="round">
+                    <animate attributeName="x2" values="-0.5;0.5;-0.5" dur="0.45s" repeatCount="indefinite" />
+                  </line>
+                  {/* Right leg */}
+                  <line x1="0" y1="1" x2="0.5" y2="2.2" stroke="currentColor" strokeWidth="0.3" strokeLinecap="round">
+                    <animate attributeName="x2" values="0.5;-0.5;0.5" dur="0.45s" repeatCount="indefinite" />
+                  </line>
+                  {/* Left arm */}
+                  <line x1="0" y1="-0.1" x2="-0.6" y2="0.6" stroke="currentColor" strokeWidth="0.25" strokeLinecap="round">
+                    <animate attributeName="x2" values="-0.6;0.3;-0.6" dur="0.45s" repeatCount="indefinite" />
+                  </line>
+                  {/* Right arm */}
+                  <line x1="0" y1="-0.1" x2="0.6" y2="0.6" stroke="currentColor" strokeWidth="0.25" strokeLinecap="round">
+                    <animate attributeName="x2" values="0.6;-0.3;0.6" dur="0.45s" repeatCount="indefinite" />
+                  </line>
+                </g>
+              </g>
+            )}
+          </svg>
+
+          {/* Outer decorative ring (slow spin) */}
+          <div className="absolute left-1/2 top-1/2 w-[34%] h-[34%] rounded-full" style={{ marginLeft: "-17%", marginTop: "-17%" }}>
+            <div className="w-full h-full rounded-full border-2 border-dashed border-accent/12 animate-[spin_50s_linear_infinite]" />
           </div>
-        ))}
+
+          {/* Center car circle */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[26%] h-[26%] rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_20px_60px_rgba(227,30,45,0.3)] z-10">
+            <Car className="w-[40%] h-[40%] text-white" strokeWidth={1.5} />
+          </div>
+
+          {/* "Ihr Auto" label */}
+          <span className="absolute left-1/2 -translate-x-1/2 z-10 bg-bg-white border border-border text-text-primary text-sm font-semibold px-5 py-2 rounded-full shadow-sm" style={{ top: "64%" }}>
+            Ihr Auto
+          </span>
+
+          {/* Benefit items in circle */}
+          {benefits.map((b, i) => (
+            <div
+              key={b.title}
+              className="absolute -translate-x-1/2 -translate-y-1/2 z-10 hover:z-30 group"
+              style={{ left: positions[i].left, top: positions[i].top }}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              onTouchStart={() => setHovered((prev) => (prev === i ? null : i))}
+            >
+              <div className="relative flex flex-col items-center gap-3 cursor-default">
+                <div className="w-[72px] h-[72px] rounded-full bg-bg-white border-2 border-border flex items-center justify-center text-accent shadow-sm group-hover:border-accent group-hover:bg-accent group-hover:text-white group-hover:shadow-[0_8px_25px_rgba(227,30,45,0.25)] transition-all duration-300">
+                  <b.icon className="w-8 h-8" strokeWidth={1.6} />
+                </div>
+                <span className="text-[0.9rem] font-semibold text-text-primary text-center leading-tight max-w-[140px] group-hover:text-accent transition-colors">
+                  {b.title}
+                </span>
+                {/* Tooltip with description – positioned outside the circle */}
+                <div className={`absolute w-[210px] bg-bg-white border border-border rounded-xl p-4 shadow-[0_8px_30px_rgba(0,0,0,0.12)] opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none z-40 ${tooltipClass[i]}`}>
+                  <p className="text-text-secondary text-[0.85rem] leading-relaxed text-center">
+                    {b.text}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Mobile / Tablet: Grid ── */}
+      <div className="lg:hidden max-w-[700px] mx-auto">
+        <div className="flex justify-center mb-8">
+          <div className="w-[100px] h-[100px] rounded-full bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center shadow-[0_12px_40px_rgba(227,30,45,0.25)]">
+            <Car className="w-10 h-10 text-white" strokeWidth={1.5} />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {benefits.map((b) => (
+            <MobileCard key={b.title} {...b} />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+/* ── Mobile card ── */
+function MobileCard({ title, text, icon: Icon }: BenefitItem) {
+  return (
+    <div className="bg-bg-white border border-border rounded-2xl p-5 transition-all hover:border-accent hover:shadow-[0_8px_30px_rgba(227,30,45,0.08)] group">
+      <div className="flex items-start gap-3">
+        <div className="shrink-0 w-10 h-10 rounded-full bg-accent-bg flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+          <Icon className="w-[18px] h-[18px]" strokeWidth={2} />
+        </div>
+        <div>
+          <h3 className="text-[0.9rem] font-semibold mb-1">{title}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed">{text}</p>
+        </div>
+      </div>
+    </div>
   );
 }

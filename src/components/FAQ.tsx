@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { type ReactNode, useState } from "react";
 
-const faqs = [
+const K = () => <>Ka<span className="text-accent">La</span></>;
+
+const faqs: { q: ReactNode; a: ReactNode }[] = [
   {
     q: "Ist die Besichtigung beim Autoankauf wirklich kostenlos?",
-    a: "Ja, absolut. Die Besichtigung, Abholung und alle Dokumente sind komplett kostenfrei. Es entstehen keine Folgekosten. KaLa Automobile bietet in Nürnberg, Eckental und Umgebung eine 100% kostenlose Fahrzeugbewertung an.",
+    a: <>Ja, absolut. Die Besichtigung, Abholung und alle Dokumente sind komplett kostenfrei. Es entstehen keine Folgekosten. <K /> Automobile bietet in Nürnberg, Eckental und Umgebung eine 100% kostenlose Fahrzeugbewertung an.</>,
   },
   {
     q: "Kaufen Sie auch Unfallfahrzeuge und Autos ohne TÜV in Nürnberg an?",
@@ -21,26 +23,26 @@ const faqs = [
   },
   {
     q: "Gibt es Gewährleistungspflichten für mich als Verkäufer?",
-    a: "Nein. Sie verkaufen ohne Garantie- und Gewährleistungspflicht. Das gesamte Risiko liegt bei KaLa Automobile.",
+    a: <>Nein. Sie verkaufen ohne Garantie- und Gewährleistungspflicht. Das gesamte Risiko liegt bei <K /> Automobile.</>,
   },
   {
     q: "Werden meine Daten an Dritte weitergegeben?",
-    a: "Nein. Wir arbeiten ohne Zwischenhändler und geben keine Daten an Dritte weiter. Ihre Daten bleiben ausschließlich bei KaLa Automobile.",
+    a: <>Nein. Wir arbeiten ohne Zwischenhändler und geben keine Daten an Dritte weiter. Ihre Daten bleiben ausschließlich bei <K /> Automobile.</>,
   },
   {
     q: "Übernehmen Sie die Abmeldung meines Fahrzeugs?",
     a: "Ja, wir kümmern uns um die komplette Abmeldung bei der Zulassungsstelle – kostenfrei und ohne Aufwand für Sie. Sie erhalten einen Nachweis der Abmeldung per E-Mail oder Post.",
   },
   {
-    q: "Kann ich KaLa Automobile auch per WhatsApp erreichen?",
+    q: <>Kann ich <K /> Automobile auch per WhatsApp erreichen?</>,
     a: "Ja! Sie können uns jederzeit per WhatsApp unter 0178 4096050 kontaktieren. Fotos vom Fahrzeug können Sie uns direkt zusenden für eine schnelle Bewertung.",
   },
   {
-    q: "In welchen Städten bietet KaLa Automobile Autoankauf an?",
-    a: "KaLa Automobile kauft Fahrzeuge in Nürnberg, Eckental, Erlangen, Fürth, Schwabach, Herzogenaurach, Heroldsberg, Lauf an der Pegnitz, Forchheim, Bamberg und der gesamten Metropolregion Nürnberg an. Kostenlose Abholung in ganz Mittelfranken.",
+    q: <>In welchen Städten bietet <K /> Automobile Autoankauf an?</>,
+    a: <><K /> Automobile kauft Fahrzeuge in Nürnberg, Eckental, Erlangen, Fürth, Schwabach, Herzogenaurach, Heroldsberg, Lauf an der Pegnitz, Forchheim, Bamberg und der gesamten Metropolregion Nürnberg an. Kostenlose Abholung in ganz Mittelfranken.</>,
   },
   {
-    q: "Welche Fahrzeuge kauft KaLa Automobile an?",
+    q: <>Welche Fahrzeuge kauft <K /> Automobile an?</>,
     a: "Wir kaufen alle Fahrzeuge: Gebrauchtwagen, Unfallfahrzeuge, Autos ohne TÜV, mit Motorschaden, Getriebeschaden, hohem Kilometerstand, Diesel, Benziner, Elektro, Hybrid, Transporter und Firmenwagen. Alle Marken und Modelle.",
   },
 ];

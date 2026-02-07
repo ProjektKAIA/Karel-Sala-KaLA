@@ -25,7 +25,7 @@ const contactCards = [
     title: "WhatsApp",
     content: (
       <a
-        href="https://wa.me/491784096050"
+        href="https://wa.me/491784096050?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Autoverkauf%20an%20Sie.%20K%C3%B6nnten%20Sie%20mir%20bitte%20ein%20Angebot%20machen%3F"
         target="_blank"
         rel="noopener noreferrer"
         className="text-accent no-underline font-medium hover:underline"
@@ -59,7 +59,7 @@ export default function Contact() {
           Kontakt
         </div>
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
-          Autoankauf Kontakt – So erreichen Sie KaLa Automobile
+          Autoankauf Kontakt – So erreichen Sie Ka<span className="text-accent">La</span> Automobile
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
           Rufen Sie uns an, schreiben Sie per WhatsApp oder E-Mail – wir kaufen Ihr Auto in Nürnberg, Eckental und Umgebung.

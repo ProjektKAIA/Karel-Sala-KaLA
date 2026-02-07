@@ -40,7 +40,7 @@ export default function AnkaufForm() {
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a
-              href="https://wa.me/491784096050"
+              href="https://wa.me/491784096050?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Autoverkauf%20an%20Sie.%20K%C3%B6nnten%20Sie%20mir%20bitte%20ein%20Angebot%20machen%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#25d366] text-white px-6 py-3 rounded-full font-semibold no-underline inline-flex items-center gap-2 hover:bg-[#20bd5a] transition-colors"

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import KaLa from "./KaLa";
 
 export default function Hero() {
   return (
@@ -14,7 +15,7 @@ export default function Hero() {
             <span className="text-accent">Einfach, fair & sofort.</span>
           </h1>
           <p className="text-lg text-text-secondary mb-9 max-w-[520px] leading-relaxed">
-            KaLa Automobile kauft Fahrzeuge aller Art in Nürnberg, Eckental,
+            <KaLa /> Automobile kauft Fahrzeuge aller Art in Nürnberg, Eckental,
             Erlangen, Fürth und ganz Mittelfranken. Kostenlose Besichtigung,
             sofortige Barzahlung vor Ort, kostenlose Abholung und Abmeldung –
             auch Unfallwagen und Fahrzeuge ohne TÜV.
@@ -54,10 +55,6 @@ export default function Hero() {
             <div className="text-center">
               <span className="text-[1.6rem] font-bold text-white block">24h</span>
               <span className="text-xs text-white/75 uppercase tracking-wider">Antwort</span>
-            </div>
-            <div className="text-center">
-              <span className="text-[1.6rem] font-bold text-white block">100%</span>
-              <span className="text-xs text-white/75 uppercase tracking-wider">Kostenlos</span>
             </div>
             <div className="text-center">
               <span className="text-[1.6rem] font-bold text-white block">Bar</span>

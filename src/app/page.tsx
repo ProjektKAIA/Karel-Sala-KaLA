@@ -5,7 +5,6 @@ import Benefits from "@/components/Benefits";
 import Process from "@/components/Process";
 import AnkaufForm from "@/components/AnkaufForm";
 import Abmeldung from "@/components/Abmeldung";
-import Reviews from "@/components/Reviews";
 import FAQ from "@/components/FAQ";
 import SeoContent from "@/components/SeoContent";
 import Contact from "@/components/Contact";
@@ -23,7 +22,6 @@ export default function Home() {
         <Process />
         <AnkaufForm />
         <Abmeldung />
-        <Reviews />
         <FAQ />
         <SeoContent />
         <Contact />

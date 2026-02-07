@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
         </div>
       )}
       <a
-        href="https://wa.me/491784096050?text=Hallo%2C%20ich%20möchte%20mein%20Fahrzeug%20zum%20Ankauf%20anbieten."
+        href="https://wa.me/491784096050?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Autoverkauf%20an%20Sie.%20K%C3%B6nnten%20Sie%20mir%20bitte%20ein%20Angebot%20machen%3F"
         target="_blank"
         rel="noopener noreferrer"
         className="w-[60px] h-[60px] bg-[#25d366] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#20bd5a] transition-all hover:scale-110 wa-pulse"

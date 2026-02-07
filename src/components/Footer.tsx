@@ -28,7 +28,7 @@ export default function Footer() {
               <h4 className="text-sm font-semibold mb-3 text-text-primary">Kontakt</h4>
               <ul className="space-y-2 list-none">
                 <li><a href="tel:01784096050" className="text-text-muted text-sm no-underline hover:text-accent transition-colors">0178 4096050</a></li>
-                <li><a href="https://wa.me/491784096050" target="_blank" rel="noopener noreferrer" className="text-text-muted text-sm no-underline hover:text-accent transition-colors">WhatsApp</a></li>
+                <li><a href="https://wa.me/491784096050?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Autoverkauf%20an%20Sie.%20K%C3%B6nnten%20Sie%20mir%20bitte%20ein%20Angebot%20machen%3F" target="_blank" rel="noopener noreferrer" className="text-text-muted text-sm no-underline hover:text-accent transition-colors">WhatsApp</a></li>
                 <li><a href="mailto:k.sala@kala-automobile.de" className="text-text-muted text-sm no-underline hover:text-accent transition-colors">k.sala@kala-automobile.de</a></li>
                 <li><span className="text-text-muted text-sm">Begonienstraße 1, 90542 Eckental</span></li>
               </ul>
@@ -49,14 +49,14 @@ export default function Footer() {
             Autoankauf in Ihrer Nähe
           </h4>
           <p className="text-text-muted text-xs leading-relaxed">
-            KaLa Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Erlangen · Autoankauf Fürth · Autoankauf Schwabach · Autoankauf Herzogenaurach · Autoankauf Heroldsberg · Autoankauf Lauf an der Pegnitz · Autoankauf Forchheim · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
+            Ka<span className="text-accent">La</span> Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Erlangen · Autoankauf Fürth · Autoankauf Schwabach · Autoankauf Herzogenaurach · Autoankauf Heroldsberg · Autoankauf Lauf an der Pegnitz · Autoankauf Forchheim · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
           </p>
         </div>
 
         {/* Copyright */}
         <div className="text-center pt-4 border-t border-border space-y-2">
           <p className="text-text-muted text-sm">
-            &copy; {new Date().getFullYear()} KaLa Automobile – Karel Sala. Alle
+            &copy; {new Date().getFullYear()} Ka<span className="text-accent">La</span> Automobile – Karel Sala. Alle
             Rechte vorbehalten. | Begonienstraße 1, 90542 Eckental | Autoankauf Nürnberg & Umgebung
           </p>
           <p className="text-text-muted/60 text-xs">

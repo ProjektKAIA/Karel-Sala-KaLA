@@ -1,3 +1,5 @@
+const K = () => <>Ka<span className="text-accent">La</span></>;
+
 export default function SeoContent() {
   return (
     <section className="py-16 lg:py-20 px-6 bg-bg-light" aria-label="Über unseren Autoankauf Service">
@@ -8,7 +10,7 @@ export default function SeoContent() {
 
         <div className="prose prose-sm max-w-none text-text-secondary leading-relaxed space-y-4">
           <p>
-            <strong>KaLa Automobile</strong> ist Ihr zuverlässiger Partner für den{" "}
+            <strong><K /> Automobile</strong> ist Ihr zuverlässiger Partner für den{" "}
             <strong>Autoankauf in Nürnberg, Eckental, Erlangen, Fürth</strong> und der gesamten{" "}
             <strong>Metropolregion Nürnberg</strong>. Wir kaufen Ihr Fahrzeug schnell, fair und
             unkompliziert – mit <strong>sofortiger Barzahlung</strong> und{" "}
@@ -20,7 +22,7 @@ export default function SeoContent() {
             Wir kaufen alle Fahrzeuge – alle Marken, alle Zustände
           </h3>
           <p>
-            Bei KaLa Automobile ist jedes Fahrzeug willkommen. Wir kaufen{" "}
+            Bei <K /> Automobile ist jedes Fahrzeug willkommen. Wir kaufen{" "}
             <strong>Gebrauchtwagen, Unfallfahrzeuge, Autos ohne TÜV</strong>,
             Fahrzeuge mit <strong>Motorschaden oder Getriebeschaden</strong>,
             Autos mit <strong>hohem Kilometerstand</strong> sowie{" "}
@@ -33,7 +35,7 @@ export default function SeoContent() {
             Sind Autohändler seriös?
           </h3>
           <p>
-            Sagen wir mal so, in jeder Branche gibt es schwarze Schafe. Bei KaLa Automobile setzen
+            Sagen wir mal so, in jeder Branche gibt es schwarze Schafe. Bei <K /> Automobile setzen
             wir auf <strong>absolute Transparenz</strong>. Wir geben Ihre Daten{" "}
             <strong>nicht</strong> an Dritte weiter, da wir <strong>ohne Zwischenhändler oder
             Vermittler</strong> arbeiten. Zeit ist heutzutage ein kostbares Gut, deshalb kümmern
@@ -59,7 +61,7 @@ export default function SeoContent() {
             Autoankauf mit Abmeldung – wir kümmern uns um alles
           </h3>
           <p>
-            Ein besonderer Service von KaLa Automobile: Wir übernehmen die{" "}
+            Ein besonderer Service von <K /> Automobile: Wir übernehmen die{" "}
             <strong>komplette Abmeldung</strong> Ihres Fahrzeugs bei der Zulassungsstelle –
             kostenfrei und ohne Aufwand für Sie. So sparen Sie sich den Gang zur Behörde. Sie
             erhalten einen Nachweis der Abmeldung per E-Mail oder Post.
@@ -79,7 +81,7 @@ export default function SeoContent() {
           </p>
 
           <h3 className="text-lg font-semibold text-text-primary pt-2">
-            Kontakt – So erreichen Sie KaLa Automobile
+            Kontakt – So erreichen Sie Ka<span className="text-accent">La</span> Automobile
           </h3>
           <p>
             Gerne nutzen Sie unser{" "}
@@ -96,7 +98,7 @@ export default function SeoContent() {
             </a>
             , per{" "}
             <a
-              href="https://wa.me/491784096050"
+              href="https://wa.me/491784096050?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Autoverkauf%20an%20Sie.%20K%C3%B6nnten%20Sie%20mir%20bitte%20ein%20Angebot%20machen%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent font-medium no-underline hover:underline"
@@ -110,7 +112,7 @@ export default function SeoContent() {
             . Wir setzen uns schnellstmöglich mit Ihnen in Verbindung.
           </p>
           <p className="text-text-muted text-xs pt-2">
-            KaLa Automobile – Karel Sala · Begonienstraße 1 · 90542 Eckental · Bayern · Deutschland
+            <K /> Automobile – Karel Sala · Begonienstraße 1 · 90542 Eckental · Bayern · Deutschland
           </p>
         </div>
       </div>

@@ -58,3 +58,14 @@ body {
 .nav-scrolled {
   box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
+
+/* Walking figure color cycle – changes color at each direction switch */
+@keyframes walk-color {
+  0%      { color: #3b82f6; }
+  25%     { color: #a855f7; }
+  50%     { color: #06b6d4; }
+  75%     { color: #f59e0b; }
+}
+.walk-figure {
+  animation: walk-color 5.6s step-end infinite;
+}

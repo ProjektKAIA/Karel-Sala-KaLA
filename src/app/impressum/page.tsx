@@ -23,7 +23,7 @@ export default function Impressum() {
               </h2>
               <p>
                 Karel Sala<br />
-                KaLa Automobile<br />
+                Ka<span className="text-accent">La</span> Automobile<br />
                 Begonienstraße 1<br />
                 90542 Eckental
               </p>
