@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: #e31e2d;
+  --color-accent-light: #f03a47;
+  --color-accent-dark: #c41a26;
+  --color-accent-bg: #fde8ea;
+  --color-bg: #fafafa;
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f3f4f6;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #9ca3af;
+  --color-border: #e5e7eb;
+  --font-sans: var(--font-dm-sans), "DM Sans", sans-serif;
+  --font-serif: var(--font-dm-serif), "DM Serif Display", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* WhatsApp Pulse Animation */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-pulse {
+  animation: wa-pulse 2s infinite;
+}
+
+/* FAQ Answer Transition */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.faq-answer.open {
+  max-height: 300px;
+}
+
+/* Mobile Menu Transition */
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Scrolled nav shadow */
+.nav-scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
 }
