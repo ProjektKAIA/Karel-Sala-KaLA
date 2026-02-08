@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#vorteile", label: "Vorteile" },
@@ -38,8 +39,15 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 py-3.5 flex items-center justify-between">
-          <a href="/" className="font-serif text-2xl text-text-primary no-underline">
-            Ka<span className="text-accent">La</span> Automobile
+          <a href="/" className="block no-underline">
+            <Image
+              src="/logo.jpg"
+              alt="KaLa Automobile"
+              width={140}
+              height={48}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </a>
 
           <ul className="hidden lg:flex gap-8 list-none">
@@ -87,9 +95,13 @@ export default function Navigation() {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-border">
-          <span className="font-serif text-xl">
-            Ka<span className="text-accent">La</span>
-          </span>
+          <Image
+              src="/logo.jpg"
+              alt="KaLa Automobile"
+              width={100}
+              height={34}
+              className="h-8 w-auto object-contain"
+            />
           <button
             onClick={() => setMobileOpen(false)}
             className="bg-transparent border-none text-2xl cursor-pointer text-text-primary"

@@ -373,6 +373,9 @@ export default function RootLayout({
   return (
     <html lang="de" dir="ltr">
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="alternate" hrefLang="de-DE" href="https://kala-automobile.de" />
         <link rel="alternate" hrefLang="x-default" href="https://kala-automobile.de" />
         <script
