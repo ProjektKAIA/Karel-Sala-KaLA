@@ -13,7 +13,6 @@ const galleryImages = [
   "/7aa0bf54-c09b-4b5c-be40-e2f476c62d7c.webp",
   "/7e105dd5-a171-4a77-9ace-8cb46094277d.webp",
   "/85ac686b-9bd1-40e6-ad94-49dee6ef75d4.webp",
-  "/9f835591-b013-4a05-8c92-59453d2b0edc.webp",
   "/aeeba9c4-78ae-470f-9879-c7149287460c.webp",
   "/ec8f75ba-8112-46f4-9dfb-0f53a33e84d3.webp",
   "/ff78650c-5910-43a2-b31f-b142a4405e2f.webp",
