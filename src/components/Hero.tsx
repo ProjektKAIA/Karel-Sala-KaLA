@@ -1,5 +1,23 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect, useCallback } from "react";
 import KaLa from "./KaLa";
+
+const galleryImages = [
+  "/00ab41f1-dd38-4c34-ae21-e6b22bb44813.webp",
+  "/02897cdd-57bf-44bf-9f26-f10eee16c6a0.webp",
+  "/2909d8e6-3a1c-4f29-82b7-0ade44070609.webp",
+  "/6394ba97-1b6a-4971-8f93-24492f3d0e24.webp",
+  "/653b3439-2a90-4951-95f5-a8efb7893c5a.webp",
+  "/7aa0bf54-c09b-4b5c-be40-e2f476c62d7c.webp",
+  "/7e105dd5-a171-4a77-9ace-8cb46094277d.webp",
+  "/85ac686b-9bd1-40e6-ad94-49dee6ef75d4.webp",
+  "/9f835591-b013-4a05-8c92-59453d2b0edc.webp",
+  "/aeeba9c4-78ae-470f-9879-c7149287460c.webp",
+  "/ec8f75ba-8112-46f4-9dfb-0f53a33e84d3.webp",
+  "/ff78650c-5910-43a2-b31f-b142a4405e2f.webp",
+];
 
 export default function Hero() {
   return (
@@ -41,7 +59,10 @@ export default function Hero() {
             </div>
           </div>
 
-          <HeroImage />
+          <div>
+            <HeroGallery />
+            <HeroStats />
+          </div>
         </div>
 
         {/* ── Mobile: reordered – Title → Photo → CTA → Subtext ── */}
@@ -52,8 +73,11 @@ export default function Hero() {
             <span className="text-accent">Einfach, fair & sofort.</span>
           </h1>
 
-          {/* 2. Photo */}
-          <HeroImage />
+          {/* 2. Photo Gallery */}
+          <div>
+            <HeroGallery />
+            <HeroStats />
+          </div>
 
           {/* 3. CTA Buttons */}
           <div className="flex gap-3 flex-col sm:flex-row">
@@ -86,31 +110,96 @@ export default function Hero() {
   );
 }
 
-/* Shared image block used in both layouts */
-function HeroImage() {
+function HeroGallery() {
+  const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const next = useCallback(() => {
+    setCurrent((prev) => (prev + 1) % galleryImages.length);
+  }, []);
+
+  const prev = useCallback(() => {
+    setCurrent((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [isPaused, next]);
+
   return (
-    <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)]">
-      <Image
-        src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80"
-        alt="Autoankauf Nürnberg Eckental Erlangen Fürth – KaLa Automobile kauft Ihr Fahrzeug sofort"
-        width={800}
-        height={480}
-        className="w-full h-[240px] sm:h-[320px] lg:h-[480px] object-cover block"
-        priority
-      />
-      <div className="absolute bottom-0 left-0 right-0 px-5 sm:px-7 pb-4 sm:pb-6 pt-10 sm:pt-16 bg-gradient-to-t from-black/70 to-transparent flex gap-6 sm:gap-8 items-end">
-        <div className="text-center">
-          <span className="text-xl sm:text-[1.6rem] font-bold text-white block">500+</span>
-          <span className="text-[0.65rem] sm:text-xs text-white/75 uppercase tracking-wider">Angekauft</span>
-        </div>
-        <div className="text-center">
-          <span className="text-xl sm:text-[1.6rem] font-bold text-white block">24h</span>
-          <span className="text-[0.65rem] sm:text-xs text-white/75 uppercase tracking-wider">Antwort</span>
-        </div>
-        <div className="text-center">
-          <span className="text-xl sm:text-[1.6rem] font-bold text-white block">Bar</span>
-          <span className="text-[0.65rem] sm:text-xs text-white/75 uppercase tracking-wider">Sofort</span>
-        </div>
+    <div
+      className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.08)] group"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Images */}
+      <div className="relative w-full h-[240px] sm:h-[320px] lg:h-[480px]">
+        {galleryImages.map((src, i) => (
+          <Image
+            key={src}
+            src={src}
+            alt={`Fahrzeug ${i + 1} – KaLa Automobile Autoankauf`}
+            fill
+            className={`object-cover transition-opacity duration-700 ease-in-out ${
+              i === current ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority={i === 0}
+          />
+        ))}
+      </div>
+
+      {/* Prev/Next Arrows */}
+      <button
+        onClick={prev}
+        aria-label="Vorheriges Bild"
+        className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button
+        onClick={next}
+        aria-label="Nächstes Bild"
+        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      {/* Dot Navigation */}
+      <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+        {galleryImages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            aria-label={`Bild ${i + 1} anzeigen`}
+            className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all cursor-pointer ${
+              i === current
+                ? "bg-white scale-125"
+                : "bg-white/50 hover:bg-white/75"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function HeroStats() {
+  return (
+    <div className="flex gap-6 sm:gap-8 justify-center mt-4 sm:mt-5">
+      <div className="text-center">
+        <span className="text-xl sm:text-2xl font-bold text-text-primary block">500+</span>
+        <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Angekauft</span>
+      </div>
+      <div className="text-center">
+        <span className="text-xl sm:text-2xl font-bold text-text-primary block">24h</span>
+        <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Antwort</span>
+      </div>
+      <div className="text-center">
+        <span className="text-xl sm:text-2xl font-bold text-text-primary block">Bar</span>
+        <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Sofort</span>
       </div>
     </div>
   );
