@@ -59,7 +59,7 @@ export default function Contact() {
           Kontakt
         </div>
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
-          Autoankauf Kontakt – So erreichen Sie Ka<span className="text-accent">La</span> Automobile
+          Autoankauf Kontakt – So erreichen Sie KaLa Automobile
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
           Rufen Sie uns an, schreiben Sie per WhatsApp oder E-Mail – wir kaufen Ihr Auto in Nürnberg, Eckental und Umgebung.

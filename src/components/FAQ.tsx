@@ -2,7 +2,7 @@
 
 import { type ReactNode, useState } from "react";
 
-const K = () => <>Ka<span className="text-accent">La</span></>;
+const K = () => <>KaLa</>;
 
 const faqs: { q: ReactNode; a: ReactNode }[] = [
   {

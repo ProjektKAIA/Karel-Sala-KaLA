@@ -1,4 +1,4 @@
-const K = () => <>Ka<span className="text-accent">La</span></>;
+const K = () => <>KaLa</>;
 
 export default function SeoContent() {
   return (
@@ -81,7 +81,7 @@ export default function SeoContent() {
           </p>
 
           <h3 className="text-lg font-semibold text-text-primary pt-2">
-            Kontakt – So erreichen Sie Ka<span className="text-accent">La</span> Automobile
+            Kontakt – So erreichen Sie KaLa Automobile
           </h3>
           <p>
             Gerne nutzen Sie unser{" "}

@@ -84,7 +84,7 @@ export default function Benefits() {
           Vorteile
         </div>
         <h2 className="font-serif text-[clamp(1.8rem,3vw,2.5rem)] mb-3.5">
-          Ka<span className="text-accent">La</span> Automobile
+          KaLa Automobile
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
           Transparenter und sicherer Autoankauf in Nürnberg, Eckental, Erlangen und Fürth – ohne Risiken für Sie.

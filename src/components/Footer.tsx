@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start justify-between gap-6 sm:gap-8 mb-8">
           <div>
             <a href="/" className="font-serif text-xl text-text-primary no-underline">
-              Ka<span className="text-accent">La</span> Automobile
+              KaLa Automobile
             </a>
             <p className="text-text-muted text-xs sm:text-sm mt-2 max-w-sm">
               Ihr seriöser Partner für Autoankauf in Nürnberg, Eckental, Erlangen, Fürth und ganz Mittelfranken.
@@ -49,14 +49,14 @@ export default function Footer() {
             Autoankauf in Ihrer Nähe
           </h4>
           <p className="text-text-muted text-xs leading-relaxed">
-            Ka<span className="text-accent">La</span> Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Erlangen · Autoankauf Fürth · Autoankauf Schwabach · Autoankauf Herzogenaurach · Autoankauf Heroldsberg · Autoankauf Lauf an der Pegnitz · Autoankauf Forchheim · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
+            KaLa Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Erlangen · Autoankauf Fürth · Autoankauf Schwabach · Autoankauf Herzogenaurach · Autoankauf Heroldsberg · Autoankauf Lauf an der Pegnitz · Autoankauf Forchheim · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
           </p>
         </div>
 
         {/* Copyright */}
         <div className="text-center pt-4 border-t border-border space-y-2">
           <p className="text-text-muted text-xs sm:text-sm">
-            &copy; {new Date().getFullYear()} Ka<span className="text-accent">La</span> Automobile – Karel Sala. Alle
+            &copy; {new Date().getFullYear()} KaLa Automobile – Karel Sala. Alle
             Rechte vorbehalten. | Begonienstraße 1, 90542 Eckental | Autoankauf Nürnberg & Umgebung
           </p>
           <p className="text-text-muted/60 text-xs">

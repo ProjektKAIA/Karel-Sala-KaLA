@@ -28,7 +28,7 @@ export default function Datenschutz() {
               </p>
               <p className="mt-2">
                 Karel Sala<br />
-                Ka<span className="text-accent">La</span> Automobile<br />
+                KaLa Automobile<br />
                 Begonienstraße 1<br />
                 90542 Eckental<br />
                 Telefon:{" "}
