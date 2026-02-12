@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, useRef, type FormEvent } from "react";
 
 const ausstattung = [
   "Klimaanlage",
@@ -20,15 +20,77 @@ const labelClass = "text-[0.85rem] font-medium text-text-secondary mb-1.5";
 
 export default function AnkaufForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const sectionRef = useRef<HTMLElement>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    if (submitted && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [submitted]);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const checkedAusstattung = ausstattung.filter(
+      (a) => fd.get(`ausstattung_${a}`) === "on"
+    );
+
+    const body = {
+      name: fd.get("name"),
+      email: fd.get("email"),
+      strasse: fd.get("strasse"),
+      plzOrt: fd.get("plzOrt"),
+      telefon: fd.get("telefon"),
+      marke: fd.get("marke"),
+      modell: fd.get("modell"),
+      erstzulassung: fd.get("erstzulassung"),
+      motorisierung: fd.get("motorisierung"),
+      leistung: fd.get("leistung"),
+      kilometerstand: fd.get("kilometerstand"),
+      kraftstoff: fd.get("kraftstoff"),
+      getriebe: fd.get("getriebe"),
+      farbe: fd.get("farbe"),
+      tuev: fd.get("tuev"),
+      sommerreifen: fd.get("sommerreifen"),
+      winterreifen: fd.get("winterreifen"),
+      schluessel: fd.get("schluessel"),
+      scheckheft: fd.get("scheckheft"),
+      vorbesitzer: fd.get("vorbesitzer"),
+      preis: fd.get("preis"),
+      maengel: fd.get("maengel"),
+      ausstattung: checkedAusstattung,
+      sonstiges: fd.get("sonstiges"),
+      nachricht: fd.get("nachricht"),
+    };
+
+    try {
+      const res = await fetch("/api/ankauf", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (!res.ok) throw new Error("Fehler beim Senden");
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Leider konnte Ihre Anfrage nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch."
+      );
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
     return (
-      <section className="py-10 lg:py-24 px-6" id="formular">
+      <section ref={sectionRef} className="py-10 lg:py-24 px-6" id="formular">
         <div className="max-w-[800px] mx-auto bg-bg-white border border-border rounded-3xl p-12 shadow-[0_4px_20px_rgba(0,0,0,0.06)] text-center">
           <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -62,7 +124,7 @@ export default function AnkaufForm() {
   }
 
   return (
-    <section className="py-10 lg:py-24 px-6" id="formular">
+    <section ref={sectionRef} className="py-10 lg:py-24 px-6" id="formular">
       <div className="text-center max-w-[600px] mx-auto mb-14">
         <div className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-[2px] mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"/><path d="M5 17H3v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0H9m-6-6h15m-6 0V6"/></svg>
@@ -90,6 +152,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="name"
                 required
                 placeholder="Max Mustermann"
                 className={inputClass}
@@ -102,6 +165,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="email"
+                name="email"
                 required
                 placeholder="max@beispiel.de"
                 className={inputClass}
@@ -112,6 +176,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>Straße / Hausnr.</label>
               <input
                 type="text"
+                name="strasse"
                 placeholder="Musterstraße 1"
                 className={inputClass}
               />
@@ -121,6 +186,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>PLZ / Ort</label>
               <input
                 type="text"
+                name="plzOrt"
                 placeholder="90542 Eckental"
                 className={inputClass}
               />
@@ -130,6 +196,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>Telefon</label>
               <input
                 type="tel"
+                name="telefon"
                 placeholder="0178 ..."
                 className={inputClass}
               />
@@ -149,6 +216,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="marke"
                 required
                 placeholder="z.B. BMW, Audi, VW"
                 className={inputClass}
@@ -161,6 +229,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="modell"
                 required
                 placeholder="z.B. 3er, A4, Golf"
                 className={inputClass}
@@ -171,6 +240,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>Erstzulassung</label>
               <input
                 type="text"
+                name="erstzulassung"
                 placeholder="z.B. 03/2018"
                 className={inputClass}
               />
@@ -180,6 +250,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>Motorisierung</label>
               <input
                 type="text"
+                name="motorisierung"
                 placeholder="z.B. 2.0 TDI, 1.6 TSI"
                 className={inputClass}
               />
@@ -191,6 +262,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="number"
+                name="leistung"
                 required
                 placeholder="z.B. 110"
                 className={inputClass}
@@ -203,6 +275,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="kilometerstand"
                 required
                 placeholder="z.B. 85.000 km"
                 className={inputClass}
@@ -213,7 +286,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>
                 Kraftstoffart <span className="text-accent">*</span>
               </label>
-              <select required className={selectClass} defaultValue="">
+              <select name="kraftstoff" required className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -230,7 +303,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>
                 Getriebe <span className="text-accent">*</span>
               </label>
-              <select required className={selectClass} defaultValue="">
+              <select name="getriebe" required className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -244,6 +317,7 @@ export default function AnkaufForm() {
               <label className={labelClass}>Farbe</label>
               <input
                 type="text"
+                name="farbe"
                 placeholder="z.B. Schwarz metallic"
                 className={inputClass}
               />
@@ -255,6 +329,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="tuev"
                 placeholder="z.B. 06/2026"
                 className={inputClass}
               />
@@ -262,7 +337,7 @@ export default function AnkaufForm() {
 
             <div className="flex flex-col">
               <label className={labelClass}>Sommerreifen</label>
-              <select className={selectClass} defaultValue="">
+              <select name="sommerreifen" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -274,7 +349,7 @@ export default function AnkaufForm() {
 
             <div className="flex flex-col">
               <label className={labelClass}>Winterreifen</label>
-              <select className={selectClass} defaultValue="">
+              <select name="winterreifen" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -286,7 +361,7 @@ export default function AnkaufForm() {
 
             <div className="flex flex-col">
               <label className={labelClass}>Anzahl der Schlüssel</label>
-              <select className={selectClass} defaultValue="">
+              <select name="schluessel" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -298,7 +373,7 @@ export default function AnkaufForm() {
 
             <div className="flex flex-col">
               <label className={labelClass}>Scheckheft gepflegt?</label>
-              <select className={selectClass} defaultValue="">
+              <select name="scheckheft" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -311,7 +386,7 @@ export default function AnkaufForm() {
 
             <div className="flex flex-col">
               <label className={labelClass}>Anzahl Vorbesitzer</label>
-              <select className={selectClass} defaultValue="">
+              <select name="vorbesitzer" className={selectClass} defaultValue="">
                 <option value="" disabled>
                   - auswählen -
                 </option>
@@ -329,6 +404,7 @@ export default function AnkaufForm() {
               </label>
               <input
                 type="text"
+                name="preis"
                 required
                 placeholder="Ihre Preisvorstellung"
                 className={inputClass}
@@ -342,6 +418,7 @@ export default function AnkaufForm() {
             <div className="col-span-full flex flex-col">
               <label className={labelClass}>Bekannte Mängel</label>
               <textarea
+                name="maengel"
                 placeholder="z.B. Kratzer an der Beifahrerseite, Klimaanlage defekt ..."
                 rows={3}
                 className={`${inputClass} resize-vertical min-h-[80px]`}
@@ -363,6 +440,7 @@ export default function AnkaufForm() {
                 >
                   <input
                     type="checkbox"
+                    name={`ausstattung_${a}`}
                     className="w-[18px] h-[18px] accent-accent cursor-pointer"
                   />
                   {a}
@@ -377,6 +455,7 @@ export default function AnkaufForm() {
             <div className="col-span-full flex flex-col">
               <label className={labelClass}>Sonstiges</label>
               <textarea
+                name="sonstiges"
                 placeholder="Weitere Infos zum Fahrzeug ..."
                 rows={3}
                 className={`${inputClass} resize-vertical min-h-[80px]`}
@@ -386,6 +465,7 @@ export default function AnkaufForm() {
             <div className="col-span-full flex flex-col">
               <label className={labelClass}>Ihre Nachricht</label>
               <textarea
+                name="nachricht"
                 placeholder="Ihre Nachricht an uns ..."
                 rows={3}
                 className={`${inputClass} resize-vertical min-h-[80px]`}
@@ -409,14 +489,31 @@ export default function AnkaufForm() {
               </span>
             </div>
 
+            {/* Error message */}
+            {error && (
+              <div className="col-span-full bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+                {error}
+              </div>
+            )}
+
             {/* Submit */}
             <div className="col-span-full mt-3">
               <button
                 type="submit"
-                className="w-full bg-accent text-white py-4.5 rounded-full font-semibold text-[1.05rem] border-none cursor-pointer transition-all shadow-[0_4px_15px_rgba(227,30,45,0.3)] hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(227,30,45,0.35)] flex items-center justify-center gap-2.5"
+                disabled={loading}
+                className="w-full bg-accent text-white py-4.5 rounded-full font-semibold text-[1.05rem] border-none cursor-pointer transition-all shadow-[0_4px_15px_rgba(227,30,45,0.3)] hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(227,30,45,0.35)] flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                Fahrzeug anbieten
+                {loading ? (
+                  <>
+                    <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                    Wird gesendet...
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Fahrzeug anbieten
+                  </>
+                )}
               </button>
             </div>
           </div>
