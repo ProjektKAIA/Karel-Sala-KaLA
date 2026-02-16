@@ -18,8 +18,8 @@ const faqs: { q: ReactNode; a: ReactNode }[] = [
     a: "In der Regel innerhalb von 24 Stunden nach Eingang Ihrer Anfrage. Kontaktieren Sie uns per Telefon, WhatsApp oder Formular für eine schnelle Fahrzeugbewertung.",
   },
   {
-    q: "Wie läuft die Barzahlung beim Autoankauf ab?",
-    a: "Sie erhalten Ihr Geld sofort in Bar bei Übergabe des Fahrzeugs. Dazu erhalten Sie einen gesetzlichen Kaufvertrag. Die Bezahlung erfolgt direkt vor Ort – in Nürnberg, Eckental oder wo immer Sie sich befinden.",
+    q: "Wie läuft die Bezahlung beim Autoankauf ab?",
+    a: "Sie erhalten Ihr Geld sofort in Bar oder per Echtzeitüberweisung bei Übergabe des Fahrzeugs. Dazu erhalten Sie einen gesetzlichen Kaufvertrag. Die Bezahlung erfolgt direkt vor Ort – in Nürnberg, Eckental oder wo immer Sie sich befinden.",
   },
   {
     q: "Gibt es Gewährleistungspflichten für mich als Verkäufer?",

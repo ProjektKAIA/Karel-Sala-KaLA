@@ -37,7 +37,7 @@ export default function Hero() {
             <p className="text-lg text-text-secondary mb-9 max-w-[520px] leading-relaxed">
               <KaLa /> Automobile kauft Fahrzeuge aller Art in Nürnberg, Eckental,
               Erlangen, Fürth und ganz Mittelfranken. Kostenlose Besichtigung,
-              sofortige Barzahlung vor Ort, kostenlose Abholung und Abmeldung –
+              sofortige Barzahlung oder Echtzeitüberweisung vor Ort, kostenlose Abholung und Abmeldung –
               auch Unfallwagen und Fahrzeuge ohne TÜV.
             </p>
             <div className="flex gap-3.5">
@@ -100,7 +100,7 @@ export default function Hero() {
           <p className="text-[0.95rem] text-text-secondary leading-relaxed text-center">
             <KaLa /> Automobile kauft Fahrzeuge aller Art in Nürnberg, Eckental,
             Erlangen, Fürth und ganz Mittelfranken. Kostenlose Besichtigung,
-            sofortige Barzahlung vor Ort, kostenlose Abholung und Abmeldung –
+            sofortige Barzahlung oder Echtzeitüberweisung vor Ort, kostenlose Abholung und Abmeldung –
             auch Unfallwagen und Fahrzeuge ohne TÜV.
           </p>
         </div>
@@ -197,8 +197,8 @@ function HeroStats() {
         <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Antwort</span>
       </div>
       <div className="text-center">
-        <span className="text-xl sm:text-2xl font-bold text-text-primary block">Bar</span>
-        <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Sofort</span>
+        <span className="text-xl sm:text-2xl font-bold text-text-primary block">Sofort</span>
+        <span className="text-[0.65rem] sm:text-xs text-text-secondary uppercase tracking-wider">Bar / Echtzeit</span>
       </div>
     </div>
   );

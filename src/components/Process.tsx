@@ -16,8 +16,8 @@ const steps = [
   },
   {
     num: "4",
-    title: "Barzahlung & Abmeldung",
-    text: "Sofortige Bezahlung, Kaufvertrag, Abholung und Abmeldung.",
+    title: "Barzahlung / Echtzeitüberweisung & Abmeldung",
+    text: "Sofortige Bezahlung in Bar oder per Echtzeitüberweisung, Kaufvertrag, Abholung und Abmeldung.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function Process() {
           In 4 Schritten zum Verkauf
         </h2>
         <p className="text-text-secondary text-[1.05rem]">
-          Einfacher geht es nicht – vom Formular bis zur Barzahlung.
+          Einfacher geht es nicht – vom Formular bis zur Barzahlung oder Echtzeitüberweisung.
         </p>
       </div>
 

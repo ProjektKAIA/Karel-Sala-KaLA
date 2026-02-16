@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | KaLa Automobile – Autoankauf Nürnberg",
   },
   description:
-    "Autoankauf Nürnberg, Eckental, Erlangen, Fürth & Mittelfranken ✓ Faire Höchstpreise ✓ Sofortige Barzahlung ✓ Kostenlose Abholung & Abmeldung ✓ Ankauf aller Fahrzeuge – auch Unfallwagen & ohne TÜV ☎ 0178 4096050",
+    "Autoankauf Nürnberg, Eckental, Erlangen, Fürth & Mittelfranken ✓ Faire Höchstpreise ✓ Sofortige Barzahlung oder Echtzeitüberweisung ✓ Kostenlose Abholung & Abmeldung ✓ Ankauf aller Fahrzeuge – auch Unfallwagen & ohne TÜV ☎ 0178 4096050",
   keywords: [
     "Autoankauf Nürnberg",
     "Autoankauf Eckental",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     title:
       "KaLa Automobile – Autoankauf Nürnberg, Eckental, Erlangen & Fürth | Sofort Bargeld",
     description:
-      "Wir kaufen Ihr Auto zum Höchstpreis! Sofortige Barzahlung, kostenlose Abholung & Abmeldung in Nürnberg, Eckental, Erlangen, Fürth und ganz Mittelfranken. Auch Unfallwagen & Fahrzeuge ohne TÜV.",
+      "Wir kaufen Ihr Auto zum Höchstpreis! Sofortige Barzahlung oder Echtzeitüberweisung, kostenlose Abholung & Abmeldung in Nürnberg, Eckental, Erlangen, Fürth und ganz Mittelfranken. Auch Unfallwagen & Fahrzeuge ohne TÜV.",
     images: [
       {
         url: "/og-image.jpg",
@@ -106,7 +106,7 @@ export const metadata: Metadata = {
     title:
       "KaLa Automobile – Autoankauf Nürnberg & Eckental | Sofort Bargeld",
     description:
-      "Faire Höchstpreise, sofortige Barzahlung, kostenlose Abholung & Abmeldung. Ankauf aller Fahrzeuge in Nürnberg und Umgebung.",
+      "Faire Höchstpreise, sofortige Barzahlung oder Echtzeitüberweisung, kostenlose Abholung & Abmeldung. Ankauf aller Fahrzeuge in Nürnberg und Umgebung.",
   },
   alternates: {
     canonical: "https://kala-automobile.de",
@@ -138,7 +138,7 @@ const autoDealer = {
   legalName: "KaLa Automobile – Karel Sala",
   alternateName: ["Karel Sala Automobile", "KaLA", "Kala Automobile Eckental"],
   description:
-    "Autoankauf in Nürnberg, Eckental, Erlangen, Fürth und Mittelfranken. Wir kaufen Ihr Auto zum Höchstpreis – sofortige Barzahlung, kostenlose Abholung und Abmeldung. Ankauf aller Fahrzeuge: Gebrauchtwagen, Unfallwagen, Fahrzeuge ohne TÜV, mit Motorschaden oder hohem Kilometerstand.",
+    "Autoankauf in Nürnberg, Eckental, Erlangen, Fürth und Mittelfranken. Wir kaufen Ihr Auto zum Höchstpreis – sofortige Barzahlung oder Echtzeitüberweisung, kostenlose Abholung und Abmeldung. Ankauf aller Fahrzeuge: Gebrauchtwagen, Unfallwagen, Fahrzeuge ohne TÜV, mit Motorschaden oder hohem Kilometerstand.",
   url: "https://kala-automobile.de",
   telephone: "+491784096050",
   email: "k.sala@kala-automobile.de",
@@ -190,7 +190,7 @@ const autoDealer = {
   ],
   priceRange: "€€",
   currenciesAccepted: "EUR",
-  paymentAccepted: "Bargeld, Barzahlung, Überweisung",
+  paymentAccepted: "Bargeld, Barzahlung, Echtzeitüberweisung, Überweisung",
   makesOffer: [
     {
       "@type": "Offer",
@@ -294,10 +294,10 @@ const faqPage = {
     },
     {
       "@type": "Question",
-      name: "Wie läuft die Barzahlung beim Autoankauf ab?",
+      name: "Wie läuft die Bezahlung beim Autoankauf ab?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sie erhalten Ihr Geld sofort in Bar bei Übergabe des Fahrzeugs. Dazu erhalten Sie einen gesetzlichen Kaufvertrag. Die Bezahlung erfolgt direkt vor Ort – in Nürnberg, Eckental oder wo immer Sie sich befinden.",
+        text: "Sie erhalten Ihr Geld sofort in Bar oder per Echtzeitüberweisung bei Übergabe des Fahrzeugs. Dazu erhalten Sie einen gesetzlichen Kaufvertrag. Die Bezahlung erfolgt direkt vor Ort – in Nürnberg, Eckental oder wo immer Sie sich befinden.",
       },
     },
     {

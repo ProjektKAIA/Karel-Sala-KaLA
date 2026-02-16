@@ -10,7 +10,7 @@ export default function Footer() {
             </a>
             <p className="text-text-muted text-xs sm:text-sm mt-2 max-w-sm">
               Ihr seriöser Partner für Autoankauf in Nürnberg, Eckental, Erlangen, Fürth und ganz Mittelfranken.
-              Faire Höchstpreise, sofortige Barzahlung, kostenlose Abholung und Abmeldung.
+              Faire Höchstpreise, sofortige Barzahlung oder Echtzeitüberweisung, kostenlose Abholung und Abmeldung.
             </p>
           </div>
 

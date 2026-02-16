@@ -13,7 +13,7 @@ export default function SeoContent() {
             <strong><K /> Automobile</strong> ist Ihr zuverlässiger Partner für den{" "}
             <strong>Autoankauf in Nürnberg, Eckental, Erlangen, Fürth</strong> und der gesamten{" "}
             <strong>Metropolregion Nürnberg</strong>. Wir kaufen Ihr Fahrzeug schnell, fair und
-            unkompliziert – mit <strong>sofortiger Barzahlung</strong> und{" "}
+            unkompliziert – mit <strong>sofortiger Barzahlung oder Echtzeitüberweisung</strong> und{" "}
             <strong>kostenloser Abholung</strong>. Ob Sie Ihren Gebrauchtwagen verkaufen möchten,
             einen Unfallwagen loswerden oder ein Auto ohne TÜV abgeben wollen – bei uns sind Sie richtig.
           </p>
@@ -47,7 +47,7 @@ export default function SeoContent() {
             <strong>Zeitnahe</strong> Besichtigungstermine sind bei uns garantiert, diese sind
             natürlich immer <strong>kostenfrei</strong>! Wir holen Ihr Fahrzeug{" "}
             <strong>schnellstmöglich</strong> ab, auch wenn es nicht mehr fahrbereit ist. Ihr Geld
-            erhalten Sie <strong>sofort</strong> und in <strong>Bar</strong> inklusive eines
+            erhalten Sie <strong>sofort</strong> – in <strong>Bar oder per Echtzeitüberweisung</strong> – inklusive eines
             gesetzlichen Kaufvertrages.
           </p>
           <p>

@@ -76,7 +76,7 @@ export default function Contact() {
               {c.icon}
             </div>
             <h3 className="text-sm sm:text-base font-semibold mb-1 sm:mb-2">{c.title}</h3>
-            <p className="text-text-secondary text-xs sm:text-[0.95rem] break-all sm:break-normal">{c.content}</p>
+            <p className="text-text-secondary text-[0.7rem] sm:text-[0.95rem]">{c.content}</p>
           </div>
         ))}
       </div>

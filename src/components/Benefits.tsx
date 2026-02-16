@@ -21,7 +21,7 @@ type BenefitItem = {
 };
 
 const benefits: BenefitItem[] = [
-  { title: "Sofortige Barzahlung", text: "Ihr Geld sofort in Bar bei Übergabe – inklusive Kaufvertrag.", icon: HandCoins },
+  { title: "Sofortige Barzahlung", text: "Ihr Geld sofort in Bar oder per Echtzeitüberweisung bei Übergabe – inklusive Kaufvertrag.", icon: HandCoins },
   { title: "Sofortige Bearbeitung", text: "Ihr Angebot wird sofort nach Eingang bearbeitet.", icon: Rocket },
   { title: "Kaufvertrag inklusive", text: "Gesetzlicher Kaufvertrag ist Grundbestandteil unserer Arbeit.", icon: FileSignature },
   { title: "Kostenlose Besichtigung", text: "Zeitnahe Termine – selbstverständlich immer kostenfrei.", icon: ScanSearch },

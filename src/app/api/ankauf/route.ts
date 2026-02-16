@@ -85,6 +85,52 @@ export async function POST(request: Request) {
       );
     }
 
+    // Bestätigungs-E-Mail an den Kunden
+    const kundenHtml = `
+      <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a1a">
+        <div style="background:#e31e2d;color:#fff;padding:20px 24px;border-radius:8px 8px 0 0">
+          <h1 style="margin:0;font-size:20px">Ihre Anfrage bei KaLa Automobile</h1>
+          <p style="margin:4px 0 0;font-size:14px;opacity:0.9">Vielen Dank für Ihr Interesse!</p>
+        </div>
+
+        <div style="border:1px solid #e5e5e5;border-top:none;border-radius:0 0 8px 8px;padding:24px">
+          <p style="font-size:16px;margin:0 0 16px">Hallo ${esc(data.name)},</p>
+          <p style="margin:0 0 16px">vielen Dank für Ihre Anfrage zu Ihrem <strong>${esc(data.marke)} ${esc(data.modell)}</strong>. Wir haben Ihre Daten erhalten und werden uns schnellstmöglich bei Ihnen melden – in der Regel innerhalb von 24 Stunden.</p>
+
+          <h2 style="font-size:16px;color:#e31e2d;border-bottom:2px solid #e31e2d;padding-bottom:6px">Zusammenfassung Ihrer Angaben</h2>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:20px">
+            <tr><td style="padding:6px 0;font-weight:bold;width:40%">Fahrzeug:</td><td>${esc(data.marke)} ${esc(data.modell)}</td></tr>
+            <tr><td style="padding:6px 0;font-weight:bold">Erstzulassung:</td><td>${esc(data.erstzulassung) || "–"}</td></tr>
+            <tr><td style="padding:6px 0;font-weight:bold">Kilometerstand:</td><td>${esc(data.kilometerstand)}</td></tr>
+            <tr><td style="padding:6px 0;font-weight:bold">Leistung:</td><td>${esc(data.leistung)} KW</td></tr>
+            <tr><td style="padding:6px 0;font-weight:bold;color:#e31e2d">Ihre Preisvorstellung:</td><td style="font-weight:bold">${esc(data.preis)} €</td></tr>
+          </table>
+
+          <div style="background:#f9f9f9;border-radius:8px;padding:16px;margin:20px 0">
+            <p style="margin:0 0 8px;font-weight:bold">Sie möchten nicht warten?</p>
+            <p style="margin:0 0 12px;font-size:14px;color:#555">Kontaktieren Sie uns direkt:</p>
+            <a href="https://wa.me/491784096050?text=Hallo%2C%20ich%20habe%20gerade%20eine%20Anfrage%20%C3%BCber%20das%20Formular%20gesendet." style="display:inline-block;background:#25d366;color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:14px;margin-right:8px">WhatsApp</a>
+            <a href="tel:01784096050" style="display:inline-block;background:#e31e2d;color:#fff;padding:10px 20px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:14px">Anrufen: 0178 4096050</a>
+          </div>
+
+          <hr style="border:none;border-top:1px solid #e5e5e5;margin:20px 0"/>
+          <p style="font-size:12px;color:#888">Diese E-Mail wurde automatisch generiert. Bitte antworten Sie nicht direkt auf diese Nachricht. Bei Fragen erreichen Sie uns unter <a href="mailto:k.sala@kala-automobile.de">k.sala@kala-automobile.de</a> oder telefonisch unter 0178 4096050.</p>
+          <p style="font-size:12px;color:#888">KaLa Automobile · Begonienstraße 1 · 90542 Eckental</p>
+        </div>
+      </div>
+    `;
+
+    const { error: kundenError } = await resend.emails.send({
+      from: "KaLa Automobile <k.sala@kala-automobile.de>",
+      to: data.email,
+      subject: `Ihre Anfrage wurde empfangen – ${data.marke} ${data.modell}`,
+      html: kundenHtml,
+    });
+
+    if (kundenError) {
+      console.error("Kunden-E-Mail Fehler:", kundenError);
+    }
+
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Email send error:", err);

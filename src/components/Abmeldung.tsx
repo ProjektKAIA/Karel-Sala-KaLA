@@ -49,7 +49,7 @@ export default function Abmeldung() {
               {
                 step: "3",
                 title: "Wir erledigen den Rest",
-                text: "Abmeldung, Abholung, Barzahlung – alles aus einer Hand.",
+                text: "Abmeldung, Abholung, Barzahlung oder Echtzeitüberweisung – alles aus einer Hand.",
               },
             ].map((s) => (
               <div key={s.step} className="flex gap-4">
