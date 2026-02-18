@@ -30,6 +30,8 @@ export default function AnkaufForm() {
     }
   }, [submitted]);
 
+  const [formLoadedAt] = useState(() => Date.now());
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
@@ -37,6 +39,13 @@ export default function AnkaufForm() {
 
     const form = e.currentTarget;
     const fd = new FormData(form);
+
+    // Honeypot check - wenn ausgefüllt, ist es ein Bot
+    if (fd.get("website")) {
+      setSubmitted(true);
+      setLoading(false);
+      return;
+    }
 
     const checkedAusstattung = ausstattung.filter(
       (a) => fd.get(`ausstattung_${a}`) === "on"
@@ -68,6 +77,7 @@ export default function AnkaufForm() {
       ausstattung: checkedAusstattung,
       sonstiges: fd.get("sonstiges"),
       nachricht: fd.get("nachricht"),
+      _t: formLoadedAt,
     };
 
     try {
@@ -140,6 +150,12 @@ export default function AnkaufForm() {
 
       <div className="max-w-[800px] mx-auto bg-bg-white border border-border rounded-3xl p-6 lg:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.06)]">
         <form onSubmit={handleSubmit}>
+          {/* Honeypot - unsichtbar für echte Nutzer, Bots füllen es aus */}
+          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden", tabIndex: -1 }}>
+            <label>Website</label>
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Kontaktdaten */}
             <div className="col-span-full text-base font-semibold text-accent mt-2">

@@ -3,9 +3,21 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const MIN_SUBMIT_TIME_MS = 5000; // Mindestens 5 Sekunden zum Ausfüllen
+
 export async function POST(request: Request) {
   try {
     const data = await request.json();
+
+    // Honeypot-Check: Feld "website" darf nicht ausgefüllt sein
+    if (data.website) {
+      return NextResponse.json({ success: true }); // Bot bekommt "Erfolg" aber nichts passiert
+    }
+
+    // Zeitcheck: Formular muss mindestens 5 Sekunden offen gewesen sein
+    if (data._t && Date.now() - Number(data._t) < MIN_SUBMIT_TIME_MS) {
+      return NextResponse.json({ success: true }); // Zu schnell = Bot
+    }
 
     const ausstattungList = Array.isArray(data.ausstattung)
       ? data.ausstattung.join(", ")
