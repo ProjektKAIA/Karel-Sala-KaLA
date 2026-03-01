@@ -2,20 +2,13 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const { hostname, protocol, pathname, search } = request.nextUrl;
+  const hostname = request.headers.get("host") || "";
+  const { pathname, search } = request.nextUrl;
 
   // www -> non-www redirect
-  if (hostname === "www.kala-automobile.de") {
+  if (hostname.startsWith("www.")) {
     return NextResponse.redirect(
       `https://kala-automobile.de${pathname}${search}`,
-      301,
-    );
-  }
-
-  // HTTP -> HTTPS redirect (fuer Nicht-Vercel-Hosting)
-  if (protocol === "http:") {
-    return NextResponse.redirect(
-      `https://${hostname}${pathname}${search}`,
       301,
     );
   }
