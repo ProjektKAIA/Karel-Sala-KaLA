@@ -72,9 +72,20 @@ export default function SeoContent() {
           </h3>
           <p>
             Unser Autoankauf-Service erstreckt sich über die gesamte Region. Wir sind aktiv in{" "}
-            <strong>Nürnberg, Eckental, Erlangen, Fürth, Schwabach, Herzogenaurach, Heroldsberg,
-            Lauf an der Pegnitz, Forchheim, Bamberg, Ansbach, Neumarkt in der Oberpfalz</strong>{" "}
-            und dem gesamten <strong>Nürnberger Land</strong>. Egal wo in{" "}
+            <strong>Nürnberg, Eckental,{" "}
+            <a href="/autoankauf-erlangen" className="text-accent no-underline hover:underline">Erlangen</a>,{" "}
+            <a href="/autoankauf-fuerth" className="text-accent no-underline hover:underline">Fürth</a>,{" "}
+            Schwabach,{" "}
+            <a href="/autoankauf-herzogenaurach" className="text-accent no-underline hover:underline">Herzogenaurach</a>,{" "}
+            Heroldsberg,{" "}
+            <a href="/autoankauf-lauf-an-der-pegnitz" className="text-accent no-underline hover:underline">Lauf an der Pegnitz</a>,{" "}
+            <a href="/autoankauf-forchheim" className="text-accent no-underline hover:underline">Forchheim</a>,{" "}
+            Bamberg, Ansbach, Neumarkt in der Oberpfalz</strong>{" "}
+            und dem gesamten <strong>Nürnberger Land</strong>. Auch{" "}
+            <a href="/autoankauf-zirndorf" className="text-accent no-underline hover:underline"><strong>Zirndorf</strong></a>{" "}
+            und{" "}
+            <a href="/gebrauchtwagen-eckental" className="text-accent no-underline hover:underline"><strong>Gebrauchtwagen in Eckental</strong></a>{" "}
+            gehören zu unserem Einzugsgebiet. Egal wo in{" "}
             <strong>Mittelfranken</strong> und der{" "}
             <strong>Metropolregion Nürnberg</strong> – wir kommen zu Ihnen und holen Ihr
             Fahrzeug kostenlos ab.

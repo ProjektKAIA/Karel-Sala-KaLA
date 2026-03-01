@@ -48,8 +48,27 @@ export default function Footer() {
           <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-3">
             Autoankauf in Ihrer Nähe
           </h4>
+          <div className="flex flex-wrap gap-2 mb-3">
+            {[
+              { href: "/autoankauf-erlangen", label: "Autoankauf Erlangen" },
+              { href: "/autoankauf-fuerth", label: "Autoankauf Fürth" },
+              { href: "/autoankauf-forchheim", label: "Autoankauf Forchheim" },
+              { href: "/autoankauf-herzogenaurach", label: "Autoankauf Herzogenaurach" },
+              { href: "/autoankauf-lauf-an-der-pegnitz", label: "Autoankauf Lauf a.d. Pegnitz" },
+              { href: "/autoankauf-zirndorf", label: "Autoankauf Zirndorf" },
+              { href: "/gebrauchtwagen-eckental", label: "Gebrauchtwagen Eckental" },
+            ].map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-text-muted text-xs bg-bg-light border border-border rounded-full px-3 py-1 no-underline hover:text-accent hover:border-accent transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
           <p className="text-text-muted text-xs leading-relaxed">
-            KaLa Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Erlangen · Autoankauf Fürth · Autoankauf Schwabach · Autoankauf Herzogenaurach · Autoankauf Heroldsberg · Autoankauf Lauf an der Pegnitz · Autoankauf Forchheim · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
+            KaLa Automobile – Autoankauf Nürnberg · Autoankauf Eckental · Autoankauf Schwabach · Autoankauf Heroldsberg · Autoankauf Bamberg · Autoankauf Ansbach · Autoankauf Neumarkt · Autoankauf Nürnberger Land · Autoankauf Mittelfranken · Autoankauf Metropolregion Nürnberg · Auto verkaufen Nürnberg · Gebrauchtwagen Ankauf · Unfallwagen Ankauf · PKW Ankauf · KFZ Ankauf · Fahrzeug verkaufen Franken · Auto Barzahlung
           </p>
         </div>
 
